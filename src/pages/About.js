@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
-import aboutImg from "./assets/about.png";
-import aboutImg1 from "./assets/about1.png";
+import aboutImg from "../assets/about.png";
+import aboutImg1 from "../assets/about1.png";
 
 function About() {
   useEffect(() => {
     const reveals = document.querySelectorAll(".reveal");
 
     const onScroll = () => {
-      reveals.forEach(el => {
+      reveals.forEach((el) => {
         const top = el.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
         if (top < windowHeight - 100) {
@@ -25,7 +25,7 @@ function About() {
   return (
     <main className="about-page">
 
-      {/* HERO – H1 (ONLY ONE) */}
+      {/* HERO – SEO H1 */}
       <section className="about-hero reveal">
         <h1>
           About <span>Craftix Global</span>
@@ -85,7 +85,7 @@ function About() {
         </div>
       </section>
 
-      {/* WHY CHOOSE US – NEW (SEO BOOST) */}
+      {/* WHY CHOOSE US */}
       <section className="about-section">
         <div className="about-text reveal">
           <h2>Why Choose Craftix Global</h2>
@@ -95,9 +95,8 @@ function About() {
             mind to ensure long-term success.
           </p>
           <p>
-            Whether you are a business owner or a student working on a project,
-            Craftix Global offers reliable and affordable solutions tailored to
-            your goals.
+            Whether you are a business owner or a student, Craftix Global offers
+            reliable and affordable solutions tailored to your goals.
           </p>
         </div>
       </section>
