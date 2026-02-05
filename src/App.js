@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+
 import Home from "./pages/Home";
+import About from "./pages/About";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AdminLogin from "./pages/AdminLogin";
@@ -8,6 +10,7 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Profile from "./pages/Profile";
 import Services from "./pages/Services";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -16,14 +19,23 @@ function Layout({ children }) {
   const location = useLocation();
 
   // Pages where Navbar should be visible
-  const showNavbar = ["/", "/projects", "/services", "/contact", "/profile"].includes(
-    location.pathname
-  );
+  const showNavbar = [
+    "/",
+    "/about",
+    "/projects",
+    "/services",
+    "/contact",
+    "/profile",
+  ].includes(location.pathname);
 
   // Pages where Footer should be visible
-  const showFooter = ["/", "/projects", "/services", "/contact"].includes(
-    location.pathname
-  );
+  const showFooter = [
+    "/",
+    "/about",
+    "/projects",
+    "/services",
+    "/contact",
+  ].includes(location.pathname);
 
   return (
     <>
@@ -41,6 +53,7 @@ function App() {
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/services" element={<Services />} />
           <Route path="/login" element={<Login />} />
