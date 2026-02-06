@@ -90,21 +90,6 @@ function Navbar() {
                 <circle cx="12" cy="7" r="4" />
               </svg>
             </NavLink>
-
-            <button
-              onClick={handleLogout}
-              className="logout-btn"
-              aria-label="Logout"
-              style={{
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                color: "#674188",
-                fontSize: "14px",
-              }}
-            >
-              Logout
-            </button>
           </>
         )}
       </div>
