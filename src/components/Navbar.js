@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
 import { auth } from "../firebase";
-import { onAuthStateChanged } from "firebase/auth";
 import logo from "../assets/logo.png";
 
 function Navbar() {
