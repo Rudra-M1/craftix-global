@@ -827,13 +827,15 @@ body {
   }
 }
 
-/* ===== NAVBAR ===== */
+/* ================= NAVBAR ================= */
+
 .glass-nav {
   position: sticky;
   top: 0;
   z-index: 1000;
+
   height: 72px;
-  padding: 0 40px;
+  padding: 0 36px;
 
   display: flex;
   align-items: center;
@@ -847,6 +849,7 @@ body {
 }
 
 /* LOGO */
+
 .logo-box {
   display: flex;
   align-items: center;
@@ -857,12 +860,15 @@ body {
   width: auto;
 }
 
-/* NAV LINKS */
+/* ================= NAV LINKS ================= */
+
 .nav-links {
   display: flex;
   align-items: center;
   gap: 28px;
 }
+
+/* LINKS */
 
 .nav-links a {
   text-decoration: none;
@@ -870,10 +876,11 @@ body {
   font-size: 14.5px;
   color: #674188;
   position: relative;
-  transition: 0.25s ease;
+  transition: color 0.25s ease;
 }
 
-/* ACTIVE + HOVER */
+/* UNDERLINE EFFECT */
+
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -882,7 +889,7 @@ body {
   width: 0;
   height: 2px;
   background: #C3ACD0;
-  transition: 0.25s ease;
+  transition: width 0.25s ease;
 }
 
 .nav-links a:hover::after,
@@ -891,6 +898,7 @@ body {
 }
 
 /* PROFILE ICON */
+
 .profile-icon {
   display: flex;
   align-items: center;
@@ -902,9 +910,8 @@ body {
   stroke-width: 2;
 }
 
+/* ================= MOBILE MENU BUTTON ================= */
 
-
-/* MOBILE MENU BUTTON */
 .menu-btn {
   display: none;
   font-size: 26px;
@@ -914,7 +921,8 @@ body {
   color: #674188;
 }
 
-/* ===== MOBILE ===== */
+/* ================= MOBILE VERSION ================= */
+
 @media (max-width: 900px) {
   .menu-btn {
     display: block;
@@ -925,16 +933,27 @@ body {
     top: 72px;
     right: 0;
     width: 100%;
+
     flex-direction: column;
-    background: rgba(255, 251, 245, 0.96);
-    backdrop-filter: blur(14px);
-    padding: 30px 0;
+    align-items: center;
     gap: 22px;
+
+    background: rgba(255, 251, 245, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(195, 172, 208, 0.35);
+
     display: none;
   }
 
   .nav-links.open {
     display: flex;
+  }
+
+  .nav-links a {
+    font-size: 15.5px;
   }
 }
 
