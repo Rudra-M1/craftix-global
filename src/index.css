@@ -261,16 +261,14 @@ body {
 /* REVEAL */
 .reveal {
   opacity: 0;
-  transform: translate3d(0, 60px, 0);
-  transition: transform 0.8s ease, opacity 0.8s ease;
-  will-change: transform, opacity;
+  transform: translateY(60px);
+  transition: 1s ease;
 }
 
 .reveal.active {
   opacity: 1;
-  transform: translate3d(0, 0, 0);
+  transform: translateY(0);
 }
-
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
@@ -673,6 +671,20 @@ body {
   font-size: 1rem;
 }
 
+/* REVEAL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 60px, 0);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  will-change: transform, opacity;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .about-section {
@@ -815,103 +827,115 @@ body {
   }
 }
 
-/* ================= NAVBAR ================= */
-
+/* ================= GLASS NAVBAR ================= */
 .glass-nav {
   position: sticky;
   top: 0;
   z-index: 1000;
 
-  height: 72px;
-  padding: 0 36px;
-
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 
-  background: rgba(255, 251, 245, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  padding: 14px 64px;
 
-  border-bottom: 1px solid rgba(195, 172, 208, 0.35);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(30px) saturate(160%);
+  -webkit-backdrop-filter: blur(30px) saturate(160%);
+
+  border-bottom: 1px solid rgba(103, 65, 136, 0.15);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    0 10px 35px rgba(103,65,136,0.15);
 }
 
 /* LOGO */
-
 .logo-box {
   display: flex;
   align-items: center;
 }
 
 .logo-img {
-  height: 42px;
-  width: auto;
+  height: 40px;
 }
 
-/* ================= NAV LINKS ================= */
-
+/* LINKS */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 28px;
 }
 
-/* LINKS */
-
 .nav-links a {
   text-decoration: none;
-  font-weight: 600;
+  color: #3a3a3a;
   font-size: 14.5px;
-  color: #674188;
+  font-weight: 500;
   position: relative;
-  transition: color 0.25s ease;
+  padding: 4px 2px;
+  transition: color 0.2s ease;
 }
 
-/* UNDERLINE EFFECT */
-
+/* underline */
 .nav-links a::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 50%;
   bottom: -6px;
-  width: 0;
+  transform: translateX(-50%);
+  width: 0%;
   height: 2px;
-  background: #C3ACD0;
+  background: #674188;
   transition: width 0.25s ease;
 }
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
+.nav-links a:hover {
+  color: #674188;
+}
+
+.nav-links a:hover::after {
   width: 100%;
 }
 
-/* PROFILE ICON */
-
+/* ================= PROFILE ICON ================= */
 .profile-icon {
+  font-size: 26px;
+  color: #674188;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #674188;
+  transition: 0.3s;
 }
 
-.profile-icon svg {
-  stroke-width: 2;
+.profile-icon:hover {
+  color: #C3ACD0;
+  transform: scale(1.1);
 }
 
-/* ================= MOBILE MENU BUTTON ================= */
 
+
+/* hover */
+.profile-ui:hover {
+  background: rgba(103,65,136,0.15);
+  box-shadow: 0 4px 12px rgba(103,65,136,0.25);
+}
+
+
+
+/* MENU ICON */
 .menu-btn {
   display: none;
-  font-size: 26px;
-  background: none;
-  border: none;
+  font-size: 24px;
   cursor: pointer;
-  color: #674188;
+  color: #3a3a3a;
 }
 
-/* ================= MOBILE VERSION ================= */
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .glass-nav {
+    padding: 12px 24px;
+  }
 
-@media (max-width: 900px) {
   .menu-btn {
     display: block;
   }
@@ -919,21 +943,21 @@ body {
   .nav-links {
     position: absolute;
     top: 72px;
-    right: 0;
-    width: 100%;
+    right: 20px;
+
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(26px);
+    -webkit-backdrop-filter: blur(26px);
 
     flex-direction: column;
-    align-items: center;
-    gap: 22px;
+    width: 220px;
+    padding: 18px;
+    border-radius: 14px;
 
-    background: rgba(255, 251, 245, 0.97);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-
-    padding: 28px 0;
-    border-bottom: 1px solid rgba(195, 172, 208, 0.35);
+    box-shadow: 0 12px 30px rgba(103,65,136,0.25);
 
     display: none;
+    gap: 14px;
   }
 
   .nav-links.open {
@@ -941,7 +965,8 @@ body {
   }
 
   .nav-links a {
-    font-size: 15.5px;
+    text-align: center;
+    font-size: 14px;
   }
 }
 
