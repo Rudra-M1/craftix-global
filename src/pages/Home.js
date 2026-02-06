@@ -1,25 +1,24 @@
 import React, { useEffect } from "react";
-import heroImg from "../assets/hero.png"; // 👈 assets folder me hero.png rakho
+import heroImg from "../assets/hero.png";
 
 function Home() {
   useEffect(() => {
-    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
 
-    const onScroll = () => {
-      reveals.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
+    document
+      .querySelectorAll(".reveal")
+      .forEach(el => observer.observe(el));
 
-        if (top < windowHeight - 100) {
-          el.classList.add("active");
-        }
-      });
-    };
-
-    window.addEventListener("scroll", onScroll);
-    onScroll();
-
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -42,13 +41,18 @@ function Home() {
           </div>
 
           <div className="hero-image">
-            <img src={heroImg} alt="Hero" />
+            <img
+              src={heroImg}
+              alt="Craftix Global hero"
+              loading="eager"
+              fetchpriority="high"
+            />
           </div>
 
         </div>
       </section>
 
-      {/* TRUSTED BY */}
+      {/* TRUST */}
       <section className="hero-trust reveal">
         <p>Trusted by students & small businesses</p>
         <div className="trust-logos">
@@ -113,22 +117,6 @@ function Home() {
         <p>Let’s build something powerful together.</p>
         <a href="/contact" className="hero-btn">Get Started</a>
       </section>
-
-      {/* WHATSAPP FLOAT BUTTON */}
-      <a
-        href="https://wa.me/917383330196?text=Hi%20I%20am%20interested%20in%20your%20services"
-        className="whatsapp-widget"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div className="whatsapp-popup">
-          Chat with us on WhatsApp
-        </div>
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-          alt="WhatsApp"
-        />
-      </a>
 
     </div>
   );
