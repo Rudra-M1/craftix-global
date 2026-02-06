@@ -17,12 +17,18 @@ function Navbar() {
 
   return (
     <nav className="glass-nav">
+      {/* LOGO */}
       <div className="logo-box">
         <Link to="/">
-          <img src={logo} alt="Craftix Global Logo" className="logo-img" />
+          <img
+            src={logo}
+            alt="Craftix Global Logo"
+            className="logo-img"
+          />
         </Link>
       </div>
 
+      {/* NAV LINKS */}
       <div className={`nav-links ${open ? "open" : ""}`}>
         <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
         <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
@@ -36,11 +42,24 @@ function Navbar() {
             <NavLink to="/register" onClick={() => setOpen(false)}>Register</NavLink>
           </>
         ) : (
-          <NavLink to="/profile" className="profile-icon">👤</NavLink>
+          <NavLink
+            to="/profile"
+            className="profile-icon"
+            onClick={() => setOpen(false)}
+          >
+            👤
+          </NavLink>
         )}
       </div>
 
-      <button className="menu-btn" onClick={() => setOpen(!open)}>☰</button>
+      {/* MOBILE MENU BUTTON */}
+      <button
+        className="menu-btn"
+        onClick={() => setOpen(!open)}
+        aria-label="Toggle menu"
+      >
+        ☰
+      </button>
     </nav>
   );
 }
