@@ -31,35 +31,16 @@ function Navbar() {
 
       {/* NAV LINKS */}
       <div className={`nav-links ${open ? "open" : ""}`}>
-        <NavLink to="/" onClick={() => setOpen(false)}>
-          Home
-        </NavLink>
+        <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
+        <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
+        <NavLink to="/services" onClick={() => setOpen(false)}>Services</NavLink>
+        <NavLink to="/projects" onClick={() => setOpen(false)}>Projects</NavLink>
+        <NavLink to="/contact" onClick={() => setOpen(false)}>Contact</NavLink>
 
-        <NavLink to="/about" onClick={() => setOpen(false)}>
-          About
-        </NavLink>
-
-        <NavLink to="/services" onClick={() => setOpen(false)}>
-          Services
-        </NavLink>
-
-        <NavLink to="/projects" onClick={() => setOpen(false)}>
-          Projects
-        </NavLink>
-
-        <NavLink to="/contact" onClick={() => setOpen(false)}>
-          Contact
-        </NavLink>
-
-        {/* AUTH */}
         {!user ? (
           <>
-            <NavLink to="/login" onClick={() => setOpen(false)}>
-              Login
-            </NavLink>
-            <NavLink to="/register" onClick={() => setOpen(false)}>
-              Register
-            </NavLink>
+            <NavLink to="/login" onClick={() => setOpen(false)}>Login</NavLink>
+            <NavLink to="/register" onClick={() => setOpen(false)}>Register</NavLink>
           </>
         ) : (
           <NavLink
