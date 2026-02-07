@@ -826,181 +826,114 @@ body {
 }
 
 /* ================= GLASS NAVBAR ================= */
-<<<<<<< HEAD
-/* ===== NAVBAR ===== */
-=======
-/* ================= GLASS NAVBAR ================= */
-
->>>>>>> 45de67b (update navbar and navbar css)
 .glass-nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 72px;
-  padding: 0 40px;
-
-  height: 72px;
-  padding: 0 48px;
 
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 
-<<<<<<< HEAD
-  background: rgba(255, 251, 245, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  padding: 14px 64px;
 
-  border-bottom: 1px solid rgba(195, 172, 208, 0.35);
-=======
-  background: rgba(255, 251, 245, 0.75);
-  backdrop-filter: blur(18px) saturate(160%);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(30px) saturate(160%);
+  -webkit-backdrop-filter: blur(30px) saturate(160%);
 
-  border-bottom: 1px solid rgba(103, 65, 136, 0.2);
->>>>>>> 45de67b (update navbar and navbar css)
+  border-bottom: 1px solid rgba(103, 65, 136, 0.15);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    0 10px 35px rgba(103,65,136,0.15);
 }
 
-/* ================= LOGO ================= */
-
+/* LOGO */
 .logo-box {
   display: flex;
   align-items: center;
 }
 
 .logo-img {
-<<<<<<< HEAD
-  height: 42px;
-  width: auto;
-}
-
-/* NAV LINKS */
-=======
   height: 40px;
-  width: auto;
 }
 
-/* ================= NAV LINKS ================= */
-
->>>>>>> 45de67b (update navbar and navbar css)
+/* LINKS */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 28px;
 }
 
-/* LINKS */
-
 .nav-links a {
-<<<<<<< HEAD
   text-decoration: none;
-  font-weight: 600;
+  color: #3a3a3a;
   font-size: 14.5px;
-  color: #674188;
+  font-weight: 500;
   position: relative;
-  transition: 0.25s ease;
+  padding: 4px 2px;
+  transition: color 0.2s ease;
 }
 
-/* ACTIVE + HOVER */
-=======
-  position: relative;
-  text-decoration: none;
-  font-size: 14.5px;
-  font-weight: 600;
-  color: #674188;
-  transition: color 0.25s ease;
-}
-
-/* UNDERLINE EFFECT */
-
->>>>>>> 45de67b (update navbar and navbar css)
+/* underline */
 .nav-links a::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 50%;
   bottom: -6px;
-<<<<<<< HEAD
-  width: 0;
-  height: 2px;
-  background: #C3ACD0;
-  transition: 0.25s ease;
-=======
+  transform: translateX(-50%);
   width: 0%;
   height: 2px;
-  background: #C3ACD0;
+  background: #674188;
   transition: width 0.25s ease;
->>>>>>> 45de67b (update navbar and navbar css)
 }
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
+.nav-links a:hover {
+  color: #674188;
+}
+
+.nav-links a:hover::after {
   width: 100%;
 }
 
-/* PROFILE ICON */
-<<<<<<< HEAD
+/* ================= PROFILE ICON ================= */
 .profile-icon {
-=======
-
-.profile-icon {
-  font-size: 22px;
->>>>>>> 45de67b (update navbar and navbar css)
+  font-size: 26px;
+  color: #674188;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #674188;
-<<<<<<< HEAD
-}
-
-.profile-icon svg {
-  stroke-width: 2;
-}
-
-/* LOGOUT BUTTON */
-.logout-btn {
-  background: #674188;
-  color: #FFFBF5 !important;
-  border-radius: 999px;
-  padding: 7px 18px;
-  font-size: 13px;
-  font-weight: 600;
-  transition: 0.25s;
-}
-
-.logout-btn:hover {
-  background: #C3ACD0;
-  color: #674188 !important;
-}
-
-/* MOBILE MENU BUTTON */
-=======
-  transition: transform 0.25s ease, color 0.25s ease;
+  transition: 0.3s;
 }
 
 .profile-icon:hover {
-  transform: scale(1.1);
   color: #C3ACD0;
+  transform: scale(1.1);
 }
 
-/* ================= MENU BUTTON ================= */
 
->>>>>>> 45de67b (update navbar and navbar css)
+
+/* hover */
+.profile-ui:hover {
+  background: rgba(103,65,136,0.15);
+  box-shadow: 0 4px 12px rgba(103,65,136,0.25);
+}
+
+
+
+/* MENU ICON */
 .menu-btn {
   display: none;
-  font-size: 26px;
-  background: none;
-  border: none;
+  font-size: 24px;
   cursor: pointer;
-  color: #674188;
+  color: #3a3a3a;
 }
 
-<<<<<<< HEAD
-/* ===== MOBILE ===== */
-=======
-/* ================= MOBILE VERSION ================= */
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .glass-nav {
+    padding: 12px 24px;
+  }
 
->>>>>>> 45de67b (update navbar and navbar css)
-@media (max-width: 900px) {
   .menu-btn {
     display: block;
   }
@@ -1008,59 +941,32 @@ body {
   .nav-links {
     position: absolute;
     top: 72px;
-<<<<<<< HEAD
-    right: 0;
-    width: 100%;
-    flex-direction: column;
-    background: rgba(255, 251, 245, 0.96);
-    backdrop-filter: blur(14px);
-    padding: 30px 0;
-    gap: 22px;
-=======
     right: 20px;
-    width: 220px;
+
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(26px);
+    -webkit-backdrop-filter: blur(26px);
 
     flex-direction: column;
-    align-items: center;
-    gap: 18px;
+    width: 220px;
+    padding: 18px;
+    border-radius: 14px;
 
-    padding: 22px 18px;
+    box-shadow: 0 12px 30px rgba(103,65,136,0.25);
 
-    background: rgba(255, 251, 245, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
-    border-radius: 16px;
-    box-shadow: 0 15px 40px rgba(103, 65, 136, 0.25);
-
->>>>>>> 45de67b (update navbar and navbar css)
     display: none;
+    gap: 14px;
   }
 
   .nav-links.open {
     display: flex;
   }
-<<<<<<< HEAD
-=======
 
   .nav-links a {
-    font-size: 15px;
+    text-align: center;
+    font-size: 14px;
   }
 }
-
-/* ================= SMALL MOBILE ================= */
-
-@media (max-width: 480px) {
-  .glass-nav {
-    padding: 0 24px;
-  }
-
-  .logo-img {
-    height: 36px;
-  }
->>>>>>> 45de67b (update navbar and navbar css)
-}
-
 
 
 /* FOOTER */
@@ -1966,22 +1872,4 @@ body {
   color: #6a4f8a;
   margin-bottom: 26px;
   line-height: 1.6;
-}
-
-/* LOGOUT BUTTON */
-.logout-btn {
-  background: #674188;
-  color: #fff;
-  border-radius: 999px;
-  padding: 7px 18px;
-  font-size: 13px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.logout-btn:hover {
-  background: #C3ACD0;
-  color: #674188;
 }
