@@ -826,7 +826,12 @@ body {
 }
 
 /* ================= GLASS NAVBAR ================= */
+<<<<<<< HEAD
 /* ===== NAVBAR ===== */
+=======
+/* ================= GLASS NAVBAR ================= */
+
+>>>>>>> 45de67b (update navbar and navbar css)
 .glass-nav {
   position: sticky;
   top: 0;
@@ -834,36 +839,60 @@ body {
   height: 72px;
   padding: 0 40px;
 
+  height: 72px;
+  padding: 0 48px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 
+<<<<<<< HEAD
   background: rgba(255, 251, 245, 0.85);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 
   border-bottom: 1px solid rgba(195, 172, 208, 0.35);
+=======
+  background: rgba(255, 251, 245, 0.75);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+
+  border-bottom: 1px solid rgba(103, 65, 136, 0.2);
+>>>>>>> 45de67b (update navbar and navbar css)
 }
 
-/* LOGO */
+/* ================= LOGO ================= */
+
 .logo-box {
   display: flex;
   align-items: center;
 }
 
 .logo-img {
+<<<<<<< HEAD
   height: 42px;
   width: auto;
 }
 
 /* NAV LINKS */
+=======
+  height: 40px;
+  width: auto;
+}
+
+/* ================= NAV LINKS ================= */
+
+>>>>>>> 45de67b (update navbar and navbar css)
 .nav-links {
   display: flex;
   align-items: center;
   gap: 28px;
 }
 
+/* LINKS */
+
 .nav-links a {
+<<<<<<< HEAD
   text-decoration: none;
   font-weight: 600;
   font-size: 14.5px;
@@ -873,15 +902,34 @@ body {
 }
 
 /* ACTIVE + HOVER */
+=======
+  position: relative;
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #674188;
+  transition: color 0.25s ease;
+}
+
+/* UNDERLINE EFFECT */
+
+>>>>>>> 45de67b (update navbar and navbar css)
 .nav-links a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -6px;
+<<<<<<< HEAD
   width: 0;
   height: 2px;
   background: #C3ACD0;
   transition: 0.25s ease;
+=======
+  width: 0%;
+  height: 2px;
+  background: #C3ACD0;
+  transition: width 0.25s ease;
+>>>>>>> 45de67b (update navbar and navbar css)
 }
 
 .nav-links a:hover::after,
@@ -890,11 +938,18 @@ body {
 }
 
 /* PROFILE ICON */
+<<<<<<< HEAD
 .profile-icon {
+=======
+
+.profile-icon {
+  font-size: 22px;
+>>>>>>> 45de67b (update navbar and navbar css)
   display: flex;
   align-items: center;
   justify-content: center;
   color: #674188;
+<<<<<<< HEAD
 }
 
 .profile-icon svg {
@@ -918,6 +973,18 @@ body {
 }
 
 /* MOBILE MENU BUTTON */
+=======
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.profile-icon:hover {
+  transform: scale(1.1);
+  color: #C3ACD0;
+}
+
+/* ================= MENU BUTTON ================= */
+
+>>>>>>> 45de67b (update navbar and navbar css)
 .menu-btn {
   display: none;
   font-size: 26px;
@@ -927,7 +994,12 @@ body {
   color: #674188;
 }
 
+<<<<<<< HEAD
 /* ===== MOBILE ===== */
+=======
+/* ================= MOBILE VERSION ================= */
+
+>>>>>>> 45de67b (update navbar and navbar css)
 @media (max-width: 900px) {
   .menu-btn {
     display: block;
@@ -936,6 +1008,7 @@ body {
   .nav-links {
     position: absolute;
     top: 72px;
+<<<<<<< HEAD
     right: 0;
     width: 100%;
     flex-direction: column;
@@ -943,12 +1016,49 @@ body {
     backdrop-filter: blur(14px);
     padding: 30px 0;
     gap: 22px;
+=======
+    right: 20px;
+    width: 220px;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+
+    padding: 22px 18px;
+
+    background: rgba(255, 251, 245, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(103, 65, 136, 0.25);
+
+>>>>>>> 45de67b (update navbar and navbar css)
     display: none;
   }
 
   .nav-links.open {
     display: flex;
   }
+<<<<<<< HEAD
+=======
+
+  .nav-links a {
+    font-size: 15px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+  .glass-nav {
+    padding: 0 24px;
+  }
+
+  .logo-img {
+    height: 36px;
+  }
+>>>>>>> 45de67b (update navbar and navbar css)
 }
 
 

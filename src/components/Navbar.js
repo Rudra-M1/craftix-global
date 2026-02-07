@@ -57,4 +57,8 @@ function Navbar() {
   );
 }
 
+<<<<<<< HEAD
 export default Navbar;
+=======
+export default Navbar;
+>>>>>>> 45de67b (update navbar and navbar css)
